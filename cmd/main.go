@@ -16,10 +16,10 @@ const (
 var router = mux.NewRouter()
 
 func Handler() {
-	router.HandleFunc("/notes", note.GetAllNotes).Methods("GET")               // All Note
-	router.HandleFunc("/notes", note.CreateNote).Methods("POST")               // Create Note
-	router.HandleFunc("/notes/update/{id}", note.UpdateNote).Methods("PATCH")  // Update Note
-	router.HandleFunc("/notes/delete/{id}", note.DeleteNote).Methods("DELETE") // Delete Note
+	router.HandleFunc("/notes", note.GetAllNotes).Methods("GET")        // All Note
+	router.HandleFunc("/notes", note.CreateNote).Methods("POST")        // Create Note
+	router.HandleFunc("/notes/{id}", note.UpdateNote).Methods("PATCH")  // Update Note
+	router.HandleFunc("/notes/{id}", note.DeleteNote).Methods("DELETE") // Delete Note
 }
 
 func main() {
